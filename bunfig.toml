@@ -1,0 +1,21 @@
+jsx = "react-jsxDEV"
+jsxImportSource = "react"
+
+[loader]
+".ts" = "ts"
+".tsx" = "tsx"
+".wasm" = "wasm"
+".replit" = "toml"
+
+[define]
+"import.meta.__registry__" = "'jsr'"
+
+[install]
+peer = true
+dev = true
+
+[install.scopes]
+"@jsr" = "https://npm.jsr.io"
+
+[run]
+shell = "bun"

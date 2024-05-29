@@ -1,0 +1,31 @@
+{
+    "name": "@no-turno/repl-start",
+    "version": "0.1.0",
+    "description": "Utils for dev starters",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "compilerOptions": {
+        "lib": [
+          "esnext"
+        ],
+        "types": ["bun"]
+      },
+    "publish": {
+        "include": [
+            "jsr.json",
+            "README.md",
+            "src/index.ts"
+        ],
+        "exclude": [
+            "src/examples.ts",
+            "src/snap.ts",
+            "bunfig.toml",
+            ".config",
+            "node_modules"
+        ]
+    },
+    "unstable": [
+        "sloppy-imports"
+    ]
+}
