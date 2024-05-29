@@ -1,5 +1,8 @@
 # repl-start
 
+[![JSR](https://jsr.io/badges/@no-turno/repl-start)](https://jsr.io/@no-turno/repl-start) ✍︎ [![JSR Scope](https://jsr.io/badges/@no-turno)](https://jsr.io/@no-turno)
+
+
 To install dependencies:
 
 ```bash
