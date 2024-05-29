@@ -25,7 +25,8 @@
             ".config",
             "node_modules",
             "dist",
-            "bundle.ts"
+            "bundle.ts",
+            "tests"
         ]
     },
     "unstable": [

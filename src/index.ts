@@ -6,8 +6,8 @@
  * console.log(startConfig.config); // { name: 'John', age: 30 }
  * ```
  */
-export function createStartConfig<T = Record<string, any>>(config: T): { config: T } {
-    return { config }
+export function createStartConfig<T = Record<string, any>>(config: T):T{
+    return config
 }
 
 
@@ -21,8 +21,9 @@ export function createStartConfig<T = Record<string, any>>(config: T): { config:
  * console.log(parsedConfig); // { name: 'John', age: 30 }
  * ```
  */
-export function parseConfig(config: ReturnType<typeof createStartConfig> & { raw: string }): any {
-    return new ShadowRealm().evaluate(`const out = ${Bun.inspect(config)};out.raw`)
+export function parseConfig(config: ReturnType<typeof createStartConfig> | { 
+    raw: string }): any {
+    return new ShadowRealm().evaluate(`const out = \`${Bun.inspect(config)}\`;out`)
 }
 
 
@@ -51,7 +52,7 @@ export function readConfig(config: any, query: string): string {
  * console.log(query); // any for `(({ 'name': "john" })['name'])` \/* john *\/
  * ```
  */
-function $q(root: TemplateStringsArray, ...path: string[]): string {
+export function $q(root: TemplateStringsArray, ...path: string[]): string {
     return (root.toString().concat(path.join())).split('.').map(k => Bun.inspect([k])).join('')
 }
 

@@ -5,7 +5,6 @@ jsxImportSource = "react"
 ".ts" = "ts"
 ".tsx" = "tsx"
 ".wasm" = "wasm"
-".replit" = "toml"
 
 [define]
 "import.meta.__registry__" = "'jsr'"
