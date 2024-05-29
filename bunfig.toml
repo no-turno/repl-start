@@ -6,6 +6,11 @@ jsxImportSource = "react"
 ".tsx" = "tsx"
 ".wasm" = "wasm"
 
+[test]
+root = "./tests"
+smol = true
+preload = ["./tests/globals.js"]
+
 [define]
 "import.meta.__registry__" = "'jsr'"
 
