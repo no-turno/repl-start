@@ -1,6 +1,6 @@
 {
     "name": "@no-turno/repl-start",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Utils for dev starters",
     "exports": {
         ".": "./src/index.ts"
@@ -15,14 +15,17 @@
         "include": [
             "jsr.json",
             "README.md",
-            "src/index.ts"
+            "src/index.ts",
+            "src/types.ts"
         ],
         "exclude": [
-            "src/examples.ts",
-            "src/snap.ts",
+            "src/.examples.ts",
+            "src/.snap.ts",
             "bunfig.toml",
             ".config",
-            "node_modules"
+            "node_modules",
+            "dist",
+            "bundle.ts"
         ]
     },
     "unstable": [

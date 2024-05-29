@@ -1,7 +1,7 @@
 {
   "name": "@no-turno/repl-start",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "module": "./src/index.js",
   "description": "Utils for dev starters",
   "devDependencies": {

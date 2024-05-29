@@ -12,7 +12,6 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
     "jsxImportSource": "react",
     "strict": true,
     "skipLibCheck": true,
@@ -23,6 +22,12 @@
     "forceConsistentCasingInFileNames": true,
     "allowArbitraryExtensions": true,
     "emitBOM": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "composite": true,
+    "declarationDir": "types",
+    "outDir": "dist"
+  },
+  "include": ["src/index.ts"],
+  "exclude": ["./dist", "./types", "./src/types.ts"]
 }

@@ -1,3 +1,4 @@
+﻿export * from "./types";
 /**
  * Creates a start configuration object with a generic type T.
  * @example
@@ -6,11 +7,9 @@
  * console.log(startConfig.config); // { name: 'John', age: 30 }
  * ```
  */
-export function createStartConfig<T = Record<string, any>>(config: T): { config: T } {
-    return { config }
-}
-
-
+export declare function createStartConfig<T = Record<string, any>>(config: T): {
+    config: T;
+};
 /**
  * Parses the input configuration and returns the parsed result.
  *
@@ -21,11 +20,9 @@ export function createStartConfig<T = Record<string, any>>(config: T): { config:
  * console.log(parsedConfig); // { name: 'John', age: 30 }
  * ```
  */
-export function parseConfig(config: ReturnType<typeof createStartConfig> & { raw: string }): any {
-    return new ShadowRealm().evaluate(`const out = ${Bun.inspect(config)};out.raw`)
-}
-
-
+export declare function parseConfig(config: ReturnType<typeof createStartConfig> & {
+    raw: string;
+}): any;
 /**
  * Reads a configuration value from the input configuration object using a query string.
  *
@@ -36,10 +33,7 @@ export function parseConfig(config: ReturnType<typeof createStartConfig> & { raw
  * console.log(parsedValue); // 'John'
  * ```
  */
-export function readConfig(config: any, query: string): string {
-    return new ShadowRealm().evaluate(`Bun.inspect((${config})${query})`)
-}
-
+export declare function readConfig(config: any, query: string): string;
 /**
  * Constructs a query string from a root string and an array of path segments.
  *
@@ -51,13 +45,11 @@ export function readConfig(config: any, query: string): string {
  * console.log(query); // any for `(({ 'name': "john" })['name'])` \/* john *\/
  * ```
  */
-function $q(root: TemplateStringsArray, ...path: string[]): string {
-    return (root.toString().concat(path.join())).split('.').map(k => Bun.inspect([k])).join('')
-}
-
-export default {
-    createStartConfig,
-    parseConfig,
-    readConfig,
-    $q
-}
+declare function $q(root: TemplateStringsArray, ...path: string[]): string;
+declare const _default: {
+    createStartConfig: typeof createStartConfig;
+    parseConfig: typeof parseConfig;
+    readConfig: typeof readConfig;
+    $q: typeof $q;
+};
+export default _default;

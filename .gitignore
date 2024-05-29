@@ -186,3 +186,7 @@ bun.lockb
 .config/.local
 
 .out
+
+tsconfig.tsbuildinfo
+
+dist
